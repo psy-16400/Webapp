@@ -10,7 +10,7 @@
 <div align="center">
 	<fieldset>
 		<h1>NEW ADMISSION</h1>
-		<form action="addPerson" method="POST">
+		<form action="addVadak" method="POST">
 			<div>
 				<h3>Please fill out this form</h3>
 				<table  style="background-color: orange;">
@@ -31,6 +31,41 @@
 						<td>Age</td>
 						<td><input type="Age" name="age" required></td>	
 					</tr>		
+				  <td>Email ID</td>
+						<td><input type="Email" name="Eid" placeholder="Enter Mail ID"></td>	
+					</tr>
+					<tr>
+						<td>Contact Number</td>
+						<td><input type="Number" name="numb" placeholder="Enter Contact Number" required></td>
+					</tr>
+					<tr>
+						<td>Emergency Contact</td>
+						<td><input type="Number" name="enumb" placeholder="Enter Emergency/Parent's number"></td>
+					</tr>
+					<tr>
+						<td>Address</td>
+						<td><input type="text" name="adrs"required></td>
+					</tr>
+					<tr>
+						<td>Location</td>
+						<td><input type="text" name="loc"required></td>
+					</tr>
+					<tr>
+						<td>Experience, If any</td>
+						<td><input type="text" name="expn" placeholder="Any history in music"></td>
+					</tr>
+					<tr>
+						<td>Picture</td>
+						<td><input type="file" name="pic"></td>
+					</tr>
+					<tr>
+						<td>Preference Of Choice</td>
+						<td><input type="radio" name="pref" value="dhol">Dhol
+							<input type="radio" name="pref" value="tasha">Tasha
+							<input type="radio" name="pref" value="dhwaj">Dhwaj
+							<input type="radio" name="pref" value="tol">Tol
+							<input type="radio" name="pref" value="management">Management</td>
+					</tr>
 				</div>
 				<tr>
 					<td></td>
