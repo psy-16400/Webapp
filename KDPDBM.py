@@ -1,9 +1,9 @@
 import pymysql as p
 def getConnection():
-    return p.connect(host='localhost',user='root',password='',database='kdp')
+    return p.connect(host='localhost',user='root',password='',database='cdb')
 
     
-def addVadak(t):
+def addPerson(t):
     db=getConnection()
     sql='insert into kdpadd values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
     cr=db.cursor()
@@ -14,7 +14,7 @@ def addVadak(t):
 
 def selectAllVadak():
     db=getConnection()
-    sql='select * from kdpadd'
+    sql='select * from cdbadd'
     cr=db.cursor()
     cr.execute(sql)
     elist=cr.fetchall()
@@ -23,28 +23,28 @@ def selectAllVadak():
     return elist
 
     
-def deleteVadak(ids):
+def deletePerson(ids):
     db=getConnection()
-    sql='delete from kdpadd where id=%s'
+    sql='delete from cdbadd where id=%s'
     cr=db.cursor()
     cr.execute(sql,ids)
     db.commit()
     db.close()
 
-def selectVadakById(id1):
+def selectPersonById(id1):
     db=getConnection()
     #sql='select * from kdpadd where Id=%s'
     cr=db.cursor()
     print(id1)
-    cr.execute("select * from kdpadd where Id=%s",(id1,))
+    cr.execute("select * from cdbadd where Id=%s",(id1,))
     elist=cr.fetchall()
     db.commit()
     db.close()
     return elist[0]
 
-def updateVadak(t):
+def updatePerson(t):
     db=getConnection()
-    sql='update kdpadd set FullName=%s,Gender=%s,Age=%s,EmailID=%s,Contact=%s,Emg_Contact=%s,Address=%s,Location=%s,Experience=%s,Preference=%s where id=%s'
+    sql='update cdbadd set FullName=%s,Gender=%s,Age=%s,EmailID=%s,Contact=%s,Emg_Contact=%s,Address=%s,Location=%s,Experience=%s,Preference=%s where id=%s'
     cr=db.cursor()
     cr.execute(sql,t)
     db.commit()
@@ -52,7 +52,7 @@ def updateVadak(t):
 
 def Log_check(t):
     db=getConnection()
-    sql="select EmailID, contact from kdpadd where EmailID=%s and contact=%s"
+    sql="select EmailID, contact from cdbadd where EmailID=%s and contact=%s"
     cr=db.cursor()
     cr.execute(sql,t)
     data=cr.fetchall()
