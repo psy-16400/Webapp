@@ -5,14 +5,14 @@ def getConnection():
     
 def addPerson(t):
     db=getConnection()
-    sql='insert into kdpadd values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
+    sql='insert into kdpadd values(%s,%s,%s,%s)'
     cr=db.cursor()
     cr.execute(sql,t)
     db.commit()
     db.close()
 
 
-def selectAllVadak():
+def selectAllPerson():
     db=getConnection()
     sql='select * from cdbadd'
     cr=db.cursor()
@@ -44,7 +44,7 @@ def selectPersonById(id1):
 
 def updatePerson(t):
     db=getConnection()
-    sql='update cdbadd set FullName=%s,Gender=%s,Age=%s,EmailID=%s,Contact=%s,Emg_Contact=%s,Address=%s,Location=%s,Experience=%s,Preference=%s where id=%s'
+    sql='update cdbadd set FullName=%s,Gender=%s,Age=%s,where id=%s'
     cr=db.cursor()
     cr.execute(sql,t)
     db.commit()
