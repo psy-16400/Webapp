@@ -1,5 +1,5 @@
 from flask import *
-from KDPDBM import *
+from cdbDBM import *
 
 app=Flask(__name__)
 
@@ -31,56 +31,42 @@ def admit():
 def admissioncomplete():
     return render_template("Ad_complete.html")
 
-@app.route("/addVadak", methods=["POST"])
-def Add_vadak():
+@app.route("/addPerson", methods=["POST"])
+def Add_Person():
     Id=request.form["ID"]
     fname=request.form["fname"]
     gender=request.form["gender"]
     age=request.form["age"]
-    Eid=request.form["Eid"]
-    numb=request.form["numb"]
-    enumb=request.form["enumb"]
-    adrs=request.form["adrs"]
-    loc=request.form["loc"]
-    expn=request.form["expn"]
-    pref=request.form["pref"]
-    t=(Id, fname, gender, age, Eid, numb, enumb, adrs, loc, expn, pref)
-    addVadak(t)
+    t=(Id, fname, gender, age)
+    addPerson(t)
     return redirect("/Ad_complete")
 
-@app.route("/Vadaklist")
-def vadaklist():
-    data=selectAllVadak()
-    return render_template("All_Vadak.html",vlist=data)
+@app.route("/Personlist")
+def Personlist():
+    data=selectAllPerson()
+    return render_template("All_Person.html",vlist=data)
 
-@app.route("/deleteVadak", methods=["GET"])
-def delete_vadak():
+@app.route("/deletePerson", methods=["GET"])
+def delete_Person():
     ids=request.args.get("id")
-    deleteVadak(ids)
-    return redirect("Vadaklist")
+    deletePerson(ids)
+    return redirect("Personlist")
 
-@app.route("/editVadak/<int:myid>")
-def edit_vadak(myid):
+@app.route("/editPerson/<int:myid>")
+def edit_Person(myid):
     ids=myid
-    data=selectVadakById(ids)
+    data=selectPersonById(ids)
     return render_template("Update.html",row=data)
 
-@app.route("/updateVadak", methods=["POST"])
-def update_vadak():
+@app.route("/updatePerson", methods=["POST"])
+def update_Person():
     Id=request.form["ID"]
     fname=request.form["fname"]
     gender=request.form["gender"]
     age=request.form["age"]
-    Eid=request.form["Eid"]
-    numb=request.form["numb"]
-    enumb=request.form["enumb"]
-    adrs=request.form["adrs"]
-    loc=request.form["loc"]
-    expn=request.form["expn"]
-    pref=request.form["pref"]
-    t=(fname, gender, age, Eid, numb, enumb, adrs, loc, expn, pref, Id)
-    updateVadak(t)
-    return redirect("Vadaklist")
+    t=(Id, fname, gender, age)
+    updatePerson(t)
+    return redirect("Personlist")
 
      
 if (__name__=="__main__"):
