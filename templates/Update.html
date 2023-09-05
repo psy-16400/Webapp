@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Admissions</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='Update.css')}}">
+</head>
+<body>
+
+<div align="center">
+	<fieldset>
+		<h1>UPDATE INFORMATION</h1>
+		<form action="/updateVadak" method="POST">
+				<h3>Please update the required information</h3>
+				<table>
+					<tr>
+						<td>ID no.</td>
+						<td><input id="Id" type="Number" name="ID" value="{{row[0]}}" required></td>
+					</tr>
+					<tr>
+						<td>Full Name</td>
+						<td><input id="name" type="text" name="fname" placeholder="Enter your full name" value="{{row[1]}}" required></td>
+					</tr>
+					<tr>
+						<td>Gender :</td>
+						<td><input id="male" type="radio" name="gender" value="Male">Male
+							<input id="female" type="radio" name="gender" value="Female">Female</td>
+					</tr>
+					<tr>
+						<td>Age</td>
+						<td><input id="age" type="Age" name="age" value="{{row[3]}}" required></td>	
+					</tr>		
+					<tr>
+						<td>Email ID</td>
+						<td><input id="email" type="Email" name="Eid" placeholder="Enter Mail ID" value="{{row[4]}}"></td>	
+					</tr>
+					<tr>
+						<td>Contact Number</td>
+						<td><input id="num" type="Number" name="numb" placeholder="Enter Contact Number" value="{{row[5]}}" required></td>
+					</tr>
+					<tr>
+						<td>Emergency Contact</td>
+						<td><input id="enum" type="Number" name="enumb" placeholder="Enter Emergency/Parent's number" value="{{row[6]}}"></td>
+					</tr>
+					<tr>
+						<td>Address</td>
+						<td><input id="add" type="text" name="adrs" value="{{row[7]}}" required></td>
+					</tr>
+					<tr>
+						<td>Location</td>
+						<td><input id="loctn" type="text" name="loc" value="{{row[8]}}" required></td>
+					</tr>
+					<tr>
+						<td>Experience, If any</td>
+						<td><input id="exp" type="text" name="expn" placeholder="Any history in music" value="{{row[9]}}"></td>
+					</tr>
+					<tr>
+						<td>Picture</td>
+						<td><input id="pic" type="file" name="pic"></td>
+					</tr>
+					<tr>
+						<td>Preference Of Choice</td>
+						<td><input id="dpref" type="radio" name="pref" value="dhol">Dhol
+							<input id="tpref" type="radio" name="pref" value="tasha">Tasha
+							<input id="dwpref" type="radio" name="pref" value="dhwaj">Dhwaj
+							<input id="topref" type="radio" name="pref" value="tol">Tol
+							<input id="mgpref" type="radio" name="pref" value="management">Management</td>
+					</tr>
+				<tr>
+					<td><input type="submit" value="Submit" ></td>
+					<td><input type="reset" value="Reset"></td>
+				</tr>
+			</table>
+		</form>
+	</fieldset>
+</div>
+
+<a href="Vadaklist">All Vadak</a>
+<br>
+<a href="/">Go to Home Page</a>

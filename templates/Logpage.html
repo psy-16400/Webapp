@@ -1,0 +1,31 @@
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Log In/ Sign In</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='Admissions.css')}}">
+</head>
+<body style="background-color: floralwhite;">
+<style type="text/css">h1{color: red;} </style>
+<div align="center">
+	<fieldset style="background-color: orange;"> 
+		<h1>LOG IN</h1>
+		<form action="login1" method="POST">
+				<table>
+					<tr>
+						<td>Username</td>
+						<td><input type="text" name="uname" placeholder="Enter your Email Id" required></td>
+					</tr>
+					<tr>
+						<td>Password</td>
+						<td><input type="Password" name="passw" placeholder="Enter your mobile no." required></td>
+					</tr>
+					<tr>
+					<td align="center"><input type="submit" value="Submit" ></td>
+					<td align="center"><input type="reset" value="Reset"></td>
+					</tr>
+				</table>
+		</form>
+		<h1>{{status}}</h1>
+	</fieldset>
+	<a href="/Admissions">Register</a>
+</div>
