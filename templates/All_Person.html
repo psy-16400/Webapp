@@ -1,19 +1,12 @@
 
 <body style="background-color: orange;">
-	<h1 align="center" style="color: red;">KDP VADAK LIST</h1>
+	<h1 align="center" style="color: red;">CDB PERSON LIST</h1>
 	<table border="1px" cellspacing="10" style=" background-color: ghostwhite;">
 		<tr style="color: red;">
 			<th>ID</th>
 			<th>Full Name</th>
 			<th>Gender</th>
 			<th>Age</th>
-			<th>EmailID</th>
-			<th>Contact No</th>
-			<th>Emergency Contact</th>
-			<th>Address</th>	
-			<th>Location</th>
-			<th>Experience</th>
-			<th>Preference</th>
 			<th colspan="2">Action</th>
 		</tr>
 
@@ -24,15 +17,9 @@
 			<td>{{tup[2]}}</td>
 			<td>{{tup[3]}}</td>
 			<td>{{tup[4]}}</td>
-			<td>{{tup[5]}}</td>
-			<td>{{tup[6]}}</td>
-			<td>{{tup[7]}}</td>
-			<td>{{tup[8]}}</td>
-			<td>{{tup[9]}}</td>
-			<td>{{tup[10]}}</td>
 			<td>
-				<a href="editVadak/{{tup[0]}}">Edit</a>/
-				<a href="deleteVadak?id={{tup[0]}}">Delete</a>
+				<a href="editPerson/{{tup[0]}}">Edit</a>/
+				<a href="deletePerson?id={{tup[0]}}">Delete</a>
 			</td>
 		</tr>
 		{% endfor %}
